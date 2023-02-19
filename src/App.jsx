@@ -2,13 +2,23 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './footer/Footer';
 import Header from './header/Header';
+import Profile from './profile/Profile';
 import Main from './main/Main';
 
 const App = () => {
   return (
     <>
       <Header />
-      <Main />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </BrowserRouter>
       <Footer />
     </>
   );
