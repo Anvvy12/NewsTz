@@ -1,0 +1,12 @@
+.footer {
+  background-color: #353131;
+  color: #fff;
+  padding: 20px 0 20px 0;
+}
+
+.footer-list {
+  margin-left: 2vw;
+  &__item {
+    padding: 0 8px 0 8px;
+  }
+}
