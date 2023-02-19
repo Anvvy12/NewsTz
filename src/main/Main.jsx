@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Main = () => {
-  return <main></main>;
+  return <main>main</main>;
 };
 
 export default Main;
