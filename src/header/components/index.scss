@@ -5,18 +5,23 @@
   padding: 0 2vw 0 2vw;
 }
 
-.header-list {
+.navigation {
+  color: #fff;
   display: flex;
   height: 100%;
   align-items: center;
+}
 
-  &__item {
-    cursor: pointer;
-    padding: 0 8px 0 8px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
+.nav-button {
+  cursor: pointer;
+  padding: 0 8px 0 8px;
+  height: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-button + .nav-button {
+  margin-left: 10px;
 }
 
 .user {

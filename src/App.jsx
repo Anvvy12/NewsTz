@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Footer from './footer/Footer';
-import Header from './header/Header';
-import Profile from './profile/Profile';
-import Main from './main/Main';
-import News from './news/News';
+import Footer from './footer/components/Footer';
+import Header from './header/components/Header';
+import Profile from './profile/components/Profile';
+import Main from './main/components/Main';
+import News from './news/components/News';
 import './index.scss';
 
 const App = () => {
