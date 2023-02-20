@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from '../store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './footer/components/Footer';
 import Header from './header/components/Header';
@@ -9,7 +11,7 @@ import './index.scss';
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <BrowserRouter>
         <Switch>
@@ -25,7 +27,7 @@ const App = () => {
         </Switch>
       </BrowserRouter>
       <Footer />
-    </>
+    </Provider>
   );
 };
 
