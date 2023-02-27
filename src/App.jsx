@@ -12,8 +12,8 @@ import './index.scss';
 const App = () => {
   return (
     <Provider store={store}>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route exact path="/">
             <Main />

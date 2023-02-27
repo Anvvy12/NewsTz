@@ -1,8 +1,9 @@
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import newsReduser from './src/news/news.reducer';
+import news from './src/news/news.reducer';
+import profile from './src/profile/profile.reducer';
 import thunk from 'redux-thunk';
 
-const reducers = combineReducers({ newsReduser });
+const reducers = combineReducers({ news, profile });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
