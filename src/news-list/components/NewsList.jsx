@@ -6,13 +6,13 @@ import { fetchingNews } from '../../news/news.action';
 const NewsList = ({ fetchingNews, currentPage, newsArray }) => {
   const [a, b] = useState(currentPage);
 
-  // setInterval(() => {
-  //   b(a + 1);
-  // }, 6000);
+  setInterval(() => {
+    b(a + 1);
+  }, 6000);
 
-  // useEffect(() => {
-  //   fetchingNews();
-  // }, [a]);
+  useEffect(() => {
+    fetchingNews();
+  }, [a]);
 
   return (
     <ul className="news-list">

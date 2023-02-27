@@ -21,7 +21,7 @@ const App = () => {
   };
   return (
     <Provider store={store}>
-      {loginvisinle ? <LoginForm /> : null}
+      {loginvisinle ? <LoginForm closeForm={closeForm} /> : null}
       <BrowserRouter>
         <Header setVisible={setVisible} />
         <Switch>

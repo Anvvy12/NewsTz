@@ -1,4 +1,5 @@
 import React from 'react';
+import axiosNews from '../../flights.gateway';
 import './index.scss';
 
 const Main = ({ closeForm }) => {
