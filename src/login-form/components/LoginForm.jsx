@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './index.scss';
 
 const LoginForm = () => {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <div className="login-page">
       <div className="form">
@@ -23,4 +26,11 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+const mapState = state => {
+  return {
+    login: state.profile.login,
+  };
+};
+const mapDispatch = {};
+
+export default connect(mapState, mapDispatch)(LoginForm);

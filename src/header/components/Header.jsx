@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from '@mui/material/Button';
+import { connect } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
-const Header = ({ setVisible }) => {
+const Header = ({ setVisible, login }) => {
   return (
     <>
       <header className="header">
@@ -14,14 +15,14 @@ const Header = ({ setVisible }) => {
           <Link to="/">
             <div className="nav-container">
               <Button variant="text" color="inherit" className="nav-button">
-                main
+                MAIN
               </Button>
             </div>
           </Link>
           <Link to="/news">
             <div className="nav-container">
               <Button variant="text" color="inherit" className="nav-button">
-                news
+                NEWS
               </Button>
             </div>
           </Link>
@@ -33,7 +34,7 @@ const Header = ({ setVisible }) => {
               onClick={() => setVisible()}
             >
               <FontAwesomeIcon icon={faUser} className="user" />
-              Login
+              {login ? login : 'Login'}
             </Button>
           </div>
         </nav>
@@ -42,4 +43,11 @@ const Header = ({ setVisible }) => {
   );
 };
 
-export default Header;
+const mapState = state => {
+  return {
+    login: state.profile.login,
+  };
+};
+const mapDispatch = {};
+
+export default connect(mapState, mapDispatch)(Header);
