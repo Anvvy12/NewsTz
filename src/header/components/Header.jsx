@@ -28,20 +28,28 @@ const Header = ({ setVisible, login }) => {
               </Button>
             </div>
           </Link>
-
-          <div className="profile nav-container">
-            {/* <Link> */}
-            <Button
-              variant="text"
-              color="inherit"
-              className="nav-button user "
-              onClick={() => setVisible()}
-            >
-              <FontAwesomeIcon icon={faUser} className="user-icon" />
-              <span className="name-text">{data ? data.username : 'Login'}</span>
-            </Button>
-            {/* </Link> */}
-          </div>
+          {data ? (
+            <div className="profile nav-container">
+              <Link to={'/profile'}>
+                <Button variant="text" color="inherit" className="nav-button user ">
+                  <FontAwesomeIcon icon={faUser} className="user-icon" />
+                  <span className="name-text">{data.username}</span>
+                </Button>
+              </Link>
+            </div>
+          ) : (
+            <div className="profile nav-container">
+              <Button
+                variant="text"
+                color="inherit"
+                className="nav-button user "
+                onClick={() => setVisible()}
+              >
+                <FontAwesomeIcon icon={faUser} className="user-icon" />
+                <span className="name-text">Login</span>
+              </Button>
+            </div>
+          )}
         </nav>
       </header>
     </>
