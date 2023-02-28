@@ -18,15 +18,18 @@ const LoginForm = ({ closeForm }) => {
     event.preventDefault();
     localStorage.setItem('userData', JSON.stringify({ username, password }));
     const errors = {};
+
     if (!username.trim()) {
       errors.username = 'Enter Login';
+    } else if (username !== 'admin') {
+      errors.username = 'wrong user name';
     }
 
     // Валидация поля пароля
     if (!password.trim()) {
       errors.password = 'Enter password';
-    } else if (password.length < 8) {
-      errors.password = 'Password must be at least 8 characters';
+    } else if (password !== '12345') {
+      errors.password = 'wrong password';
     }
 
     if (Object.keys(errors).length) {
@@ -60,9 +63,7 @@ const LoginForm = ({ closeForm }) => {
 };
 
 const mapState = state => {
-  return {
-    login: state.profile.login,
-  };
+  return {};
 };
 const mapDispatch = {};
 

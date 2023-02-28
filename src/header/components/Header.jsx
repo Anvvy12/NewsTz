@@ -7,7 +7,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
-const Header = ({ setVisible, login }) => {
+const Header = ({ setVisible }) => {
   const data = JSON.parse(localStorage.getItem('userData'));
 
   return (
@@ -57,9 +57,7 @@ const Header = ({ setVisible, login }) => {
 };
 
 const mapState = state => {
-  return {
-    login: state.profile.login,
-  };
+  return {};
 };
 const mapDispatch = {};
 
