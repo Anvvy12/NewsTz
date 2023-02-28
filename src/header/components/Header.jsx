@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 
 const Header = ({ setVisible, login }) => {
+  const data = JSON.parse(localStorage.getItem('userData'));
+
   return (
     <>
       <header className="header">
@@ -26,16 +28,19 @@ const Header = ({ setVisible, login }) => {
               </Button>
             </div>
           </Link>
-          <div className="profile">
+
+          <div className="profile nav-container">
+            {/* <Link> */}
             <Button
               variant="text"
               color="inherit"
               className="nav-button user "
               onClick={() => setVisible()}
             >
-              <FontAwesomeIcon icon={faUser} className="user" />
-              {login ? login : 'Login'}
+              <FontAwesomeIcon icon={faUser} className="user-icon" />
+              <span className="name-text">{data ? data.username : 'Login'}</span>
             </Button>
+            {/* </Link> */}
           </div>
         </nav>
       </header>
