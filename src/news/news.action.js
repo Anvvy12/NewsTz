@@ -3,7 +3,6 @@ import axiosNews from '../flights.gateway';
 export const GET_NEWS = 'NEWS/GET_NEWS';
 
 const getNewsActioan = news => {
-  console.log(news);
   return {
     type: GET_NEWS,
     payload: {
@@ -12,8 +11,8 @@ const getNewsActioan = news => {
   };
 };
 
-export const fetchingNews = (page = 1) => {
+export const fetchingNews = page => {
   return function (dispatch) {
-    axiosNews(page).then(response => dispatch(getNewsActioan(response.data.value)));
+    axiosNews(page).then(response => dispatch(getNewsActioan(response.data)));
   };
 };

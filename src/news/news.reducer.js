@@ -1,7 +1,6 @@
 import { GET_NEWS } from './news.action';
 
 const initialState = {
-  page: 1,
   newsPosts: [],
 };
 
