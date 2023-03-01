@@ -13,6 +13,6 @@ const getNewsActioan = news => {
 
 export const fetchingNews = page => {
   return function (dispatch) {
-    axiosNews(page).then(response => dispatch(getNewsActioan(response.data)));
+    axiosNews(page).then(response => dispatch(getNewsActioan(response.data.articles)));
   };
 };

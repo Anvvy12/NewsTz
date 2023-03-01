@@ -1,0 +1,16 @@
+.news {
+  max-width: 50%;
+  margin: 0 20px 40px;
+  text-overflow: ellipsis;
+  border-bottom: 1px dashed grey;
+  &__img {
+    width: 100%;
+    max-width: 600px;
+    max-height: 450px;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
