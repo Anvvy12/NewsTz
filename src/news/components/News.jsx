@@ -22,7 +22,7 @@ const News = ({ closeForm, fetchingNews, news }) => {
     fetchingNews(curentPage);
   };
   return (
-    <main className="main" onClick={closeForm}>
+    <section onClick={closeForm}>
       <div className="news-page">
         <NewsList />
       </div>
@@ -33,7 +33,7 @@ const News = ({ closeForm, fetchingNews, news }) => {
           </Button>
         </ThemeProvider>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -24,17 +24,19 @@ const App = () => {
       {loginvisinle ? <LoginForm closeForm={closeForm} /> : null}
       <BrowserRouter>
         <Header setVisible={setVisible} />
-        <Switch>
-          <Route exact path="/">
-            <Main closeForm={closeForm} />
-          </Route>
-          <Route path="/news">
-            <News closeForm={closeForm} />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
+        <main className="main">
+          <Switch>
+            <Route exact path="/">
+              <Main closeForm={closeForm} />
+            </Route>
+            <Route path="/news">
+              <News closeForm={closeForm} />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+          </Switch>
+        </main>
       </BrowserRouter>
       <Footer />
     </Provider>
