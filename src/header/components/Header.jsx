@@ -15,7 +15,7 @@ const Header = ({ setVisible }) => {
     <>
       <header className="header">
         <nav className="navigation">
-          <Link to="/">
+          <Link to="/" className="nav-link">
             <div className="nav-container">
               <ThemeProvider theme={theme}>
                 <Button variant="text" className="nav-button">
@@ -24,7 +24,7 @@ const Header = ({ setVisible }) => {
               </ThemeProvider>
             </div>
           </Link>
-          <Link to="/news">
+          <Link to="/news" className="nav-link">
             <div className="nav-container">
               <ThemeProvider theme={theme}>
                 <Button variant="text" className="nav-button">

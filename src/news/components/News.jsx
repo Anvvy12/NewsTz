@@ -5,14 +5,17 @@ import { fetchingNews } from '../news.action';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
+import { newsArraySelector } from '../news.selectors';
 import './index.scss';
 
-const News = ({ closeForm, fetchingNews }) => {
-  const [curentPage, setPage] = useState();
+const News = ({ closeForm, fetchingNews, news }) => {
+  const [curentPage, setPage] = useState(1);
 
   useEffect(() => {
-    fetchingNews(curentPage);
-  }, [curentPage]);
+    if (news.length === 0) {
+      showMore();
+    }
+  }, []);
 
   const showMore = () => {
     setPage(curentPage + 1);
@@ -38,4 +41,10 @@ const mapDispatch = {
   fetchingNews: fetchingNews,
 };
 
-export default connect(null, mapDispatch)(News);
+const mapState = state => {
+  return {
+    news: newsArraySelector(state),
+  };
+};
+
+export default connect(mapState, mapDispatch)(News);

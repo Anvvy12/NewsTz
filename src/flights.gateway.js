@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const axiosNews = (page = 1) => {
+const axiosNews = page => {
   const options = {
     method: 'GET',
     url: 'https://covid-19-news.p.rapidapi.com/v1/covid',
