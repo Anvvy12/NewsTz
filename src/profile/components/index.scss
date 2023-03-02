@@ -1,10 +1,33 @@
-// .main {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+.profile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// .profile {
-//   height: 100%;
-//   width: 100%;
-// }
+.profile-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  height: 600px;
+  // background-color: green;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-label {
+  text-transform: uppercase;
+}
+
+.profile-input {
+  outline: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  width: 200px;
+  height: 30px;
+}

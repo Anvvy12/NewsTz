@@ -5,12 +5,10 @@ import { fetchingNews } from '../news.action';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
-import { newsArraySelector } from '../news.selectors';
+import { newsArraySelector, pageSelector } from '../news.selectors';
 import './index.scss';
 
-const News = ({ closeForm, fetchingNews, news }) => {
-  const [curentPage, setPage] = useState(1);
-
+const News = ({ closeForm, fetchingNews, news, page }) => {
   useEffect(() => {
     if (news.length === 0) {
       showMore();
@@ -18,8 +16,7 @@ const News = ({ closeForm, fetchingNews, news }) => {
   }, []);
 
   const showMore = () => {
-    setPage(curentPage + 1);
-    fetchingNews(curentPage);
+    fetchingNews(page);
   };
   return (
     <section onClick={closeForm}>
@@ -44,6 +41,7 @@ const mapDispatch = {
 const mapState = state => {
   return {
     news: newsArraySelector(state),
+    page: pageSelector(state),
   };
 };
 

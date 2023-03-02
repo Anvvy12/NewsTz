@@ -34,18 +34,18 @@ const Header = ({ setVisible }) => {
             </div>
           </Link>
           {data ? (
-            <div className="profile nav-container">
-              <Link to={'/profile'}>
+            <Link to="/profile" className="profile-btn">
+              <div className=" nav-container">
                 <ThemeProvider theme={theme}>
                   <Button variant="text" className="nav-button user ">
                     <FontAwesomeIcon icon={faUser} className="user-icon" />
                     <span className="name-text">{data.username}</span>
                   </Button>
                 </ThemeProvider>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ) : (
-            <div className="profile nav-container">
+            <div className="profile-btn nav-container">
               <ThemeProvider theme={theme}>
                 <Button variant="text" className="nav-button user " onClick={() => setVisible()}>
                   <FontAwesomeIcon icon={faUser} className="user-icon" />

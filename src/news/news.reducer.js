@@ -2,6 +2,7 @@ import { GET_NEWS } from './news.action';
 
 const initialState = {
   newsPosts: [],
+  page: 1,
 };
 
 const newsReduser = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const newsReduser = (state = initialState, action) => {
       return {
         ...state,
         newsPosts: state.newsPosts.concat(action.payload.news),
+        page: state.page + 1,
       };
     default:
       return state;

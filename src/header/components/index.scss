@@ -17,8 +17,12 @@
   align-items: center;
 }
 
-.nav-link + .nav-link {
-  margin-left: 10px;
+.profile-btn {
+  margin-left: auto;
+}
+
+.nav-link {
+  margin-right: 10px;
 }
 
 .user {
@@ -34,8 +38,4 @@
 }
 .user-icon {
   padding-right: 15px;
-}
-
-.profile {
-  margin-left: auto;
 }
