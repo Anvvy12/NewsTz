@@ -8,21 +8,27 @@ const Prifile = () => {
         <div className="profile-information">
           <div className="input-container">
             <label htmlFor="first-name" className="input-label">
-              Your first name
+              first name
             </label>
             <input type="text" className="profile-input " name="first-name" />
           </div>
           <div className="input-container">
             <label htmlFor="last-name" className="input-label">
-              Your last name
+              last name
             </label>
             <input type="text" className="profile-input" name="last-name" />
           </div>
           <div className="input-container">
             <label htmlFor="phone" className="input-label">
-              Your phone number
+              phone number
             </label>
             <input type="text" className="profile-input " name="phone" />
+          </div>
+          <div className="input-container">
+            <label htmlFor="email" className="input-label">
+              email
+            </label>
+            <input type="text" className="profile-input " name="email" />
           </div>
         </div>
       </section>

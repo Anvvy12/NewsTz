@@ -47,7 +47,7 @@ const LoginForm = ({ closeForm }) => {
       <div className="form">
         <form className="login-form" onSubmit={handleSubmit}>
           <input type="text" placeholder="username" onChange={onChangeUserName} value={username} />
-          {errors.username && <div>{errors.username}</div>}
+          {errors.username && <div>{errors.username} </div>}
           <input
             type="password"
             placeholder="password"

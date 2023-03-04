@@ -8,6 +8,7 @@ import Header from './header/components/Header';
 import Profile from './profile/components/Profile';
 import Main from './main/components/Main';
 import News from './news/components/News';
+import { Redirect } from 'react-router-dom';
 import './index.scss';
 
 const App = () => {
@@ -32,9 +33,13 @@ const App = () => {
             <Route path="/news">
               <News closeForm={closeForm} />
             </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
+            {JSON.parse(localStorage.getItem('userData')) ? (
+              <Route path="/profile">
+                <Profile />
+              </Route>
+            ) : (
+              <Redirect to="/" />
+            )}
           </Switch>
         </main>
       </BrowserRouter>
