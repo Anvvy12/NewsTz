@@ -1,17 +1,19 @@
 .profile {
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  min-width: 300px;
+  max-width: 550px;
+  height: 400px;
+  padding: 60px;
 }
 
 .profile-information {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60vw;
-  height: 600px;
 }
 
 .input-container {
@@ -29,4 +31,17 @@
   border-bottom: 2px solid grey;
   width: 200px;
   height: 30px;
+}
+
+.input-container {
+  margin-top: 20px;
+}
+
+.submit-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.save-button {
+  width: 100%;
 }
