@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-
 import { ThemeProvider } from '@mui/material/styles';
+import { validateEmail, validatePhone } from '../validate';
 import theme from '../theme';
 import './index.scss';
 
@@ -15,21 +15,8 @@ const Profile = () => {
     phone: userDate?.email || '',
   });
 
-  const [errors, setErrors] = useState({
-    email: '',
-    phone: '',
-  });
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = event => {
+    event.preventDefault();
     const storage = JSON.parse(localStorage.getItem('userData')) || {};
     const newStorage = {
       ...storage,
@@ -42,24 +29,17 @@ const Profile = () => {
     localStorage.setItem('userData', JSON.stringify(newStorage));
   };
 
-  const validateEmail = value => {
-    let error = '';
-    if (!value) {
-      error = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(value)) {
-      error = 'Invalid email format';
-    }
-    return error;
-  };
+  const [errors, setErrors] = useState({
+    email: '',
+    phone: '',
+  });
 
-  const validatePhone = value => {
-    let error = '';
-    if (!value) {
-      error = 'Phone number is required';
-    } else if (!/^[0-9]{10}$/.test(value)) {
-      error = 'Invalid phone number format';
-    }
-    return error;
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleBlur = e => {
