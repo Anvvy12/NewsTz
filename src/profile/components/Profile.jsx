@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import { validateEmail, validatePhone } from '../validate';
+import { useTranslation } from 'react-i18next';
 import theme from '../theme';
 import './index.scss';
 
 const Profile = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   const userDate = JSON.parse(localStorage.getItem('userData')) || {};
 
   const [formData, setFormData] = useState({
@@ -60,7 +67,7 @@ const Profile = () => {
       <form className="profile-information" onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="lastName" className="input-label">
-            first name
+            {t('profile.firstName')}
           </label>
           <input
             type="text"
@@ -72,7 +79,7 @@ const Profile = () => {
         </div>
         <div className="input-container">
           <label htmlFor="lastName" className="input-label">
-            last name
+            {t('profile.lastName')}
           </label>
           <input
             type="text"
@@ -84,7 +91,7 @@ const Profile = () => {
         </div>
         <div className="input-container">
           <label htmlFor="phone" className="input-label">
-            phone number
+            {t('profile.phone')}
           </label>
           <input
             type="text"
@@ -98,7 +105,7 @@ const Profile = () => {
         {errors.phone && <div>{errors.phone}</div>}
         <div className="input-container">
           <label htmlFor="email" className="input-label">
-            email
+            {t('profile.email')}
           </label>
           <input
             type="text"
@@ -118,7 +125,7 @@ const Profile = () => {
               type="submit"
               disabled={!isFormValid()}
             >
-              Save
+              {t('profile.save')}
             </Button>
           </ThemeProvider>
         </div>

@@ -7,5 +7,11 @@
   "footer.git": "Мій GitHub",
   "footer.linkedin": "Мій LinkedIn",
 
-  "news.show": "показати ще"
+  "news.show": "показати ще",
+
+  "profile.firstName": "ім'я",
+  "profile.lastName": "прізвище",
+  "profile.phone": "телефон ",
+  "profile.email": "email ",
+  "profile.save": "зберегти"
 }

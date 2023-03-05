@@ -7,5 +7,11 @@
   "footer.git": "My GitHub",
   "footer.linkedin": "My LinkedIn",
 
-  "news.show": "show more"
+  "news.show": "show more",
+
+  "profile.firstName": "first name",
+  "profile.lastName": "last name",
+  "profile.phone": "phone ",
+  "profile.email": "email ",
+  "profile.save": "save"
 }
