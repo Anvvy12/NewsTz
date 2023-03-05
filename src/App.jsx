@@ -29,18 +29,18 @@ const App = () => {
           <Header setVisible={setVisible} />
           <main className="main" onClick={closeForm}>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/NewsTz/">
                 <Main closeForm={closeForm} />
               </Route>
-              <Route path="/news">
+              <Route path="/NewsTz/news">
                 <News closeForm={closeForm} />
               </Route>
               {JSON.parse(localStorage.getItem('userData')) ? (
-                <Route path="/profile">
+                <Route path="/NewsTz/profile">
                   <Profile />
                 </Route>
               ) : (
-                <Redirect to="/" />
+                <Redirect to="/NewsTz/" />
               )}
             </Switch>
           </main>
