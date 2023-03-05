@@ -17,5 +17,25 @@
 
   "login.userName": "username",
   "login.password": "password",
-  "login.login": "login"
+  "login.login": "login",
+
+  "main.title": "Сoronavirus",
+  "main.statisticsLink": "Statistics",
+  "main.symptomsLink": "Symptoms",
+  "main.preventionLink": "Prevention",
+  "main.subtitle": "Stay safe",
+  "main.paragraph": "Learn about coronavirus prevention and stay safe",
+  "main.btn": "Learn more",
+  "main.statistics": "Statistics",
+  "main.statisticsP": "Current statistics about the coronavirus will be displayed here.",
+  "main.sumptoms": "Symptoms",
+  "main.sumptomsP": "Here you will find information about the symptoms of the coronavirus.",
+  "main.prevention": "Prevention",
+  "main.preventionP": "There will be information about the prevention of coronavirus",
+  "main.treatment": "Treatment",
+  "main.treatmentP": "There will be information about treatment for coronavirus",
+  "main.risk": "Risk areas",
+  "main.riskP": "Here you will find information about areas at risk of being affected by the virus.",
+  "main.diagnostics": "Diagnostics",
+  "main.diagnosticsP": "There will be information about the diagnosis of the coronavirus"
 }

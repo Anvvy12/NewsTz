@@ -135,7 +135,7 @@ const Profile = () => {
           </ThemeProvider>
           {isSubmitted && (
             <div className="sub-container">
-              <span className="sub-text">data save</span>
+              <span className="sub-text">data saved</span>
             </div>
           )}
         </div>

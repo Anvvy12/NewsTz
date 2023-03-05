@@ -1,48 +1,62 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
 import theme from '../theme';
 import './index.scss';
 
 const Main = ({ closeForm }) => {
+  const { t, i18n } = useTranslation();
   return (
     <section className="nav-section" onClick={closeForm}>
-      <h1 className="title">Коронавiрус</h1>
-      <nav className="main-navigator">
-        <a href="#" className="main-nav-link">
-          Статистика
-        </a>
-        <a href="#" className="main-nav-link">
-          Симптоми
-        </a>
-        <a href="#" className="main-nav-link">
-          Профілактика
-        </a>
-      </nav>
+      <h1 className="title">{t('main.title')}</h1>
       <section className="main-section">
-        <h2 className="main-header">Залишайтесь в безпеці</h2>
-        <p className="main-paragraph">
-          Дізнайтесь про профілактику коронавірусу та залишайтесь в безпеці
-        </p>
+        <h2 className="main-header">{t('main.subtitle')}</h2>
+        <p className="main-paragraph">{t('main.paragraph')}</p>
         <ThemeProvider theme={theme}>
           <Button className="main-btn" variant="contained">
-            Дізнатися більше
+            {t('main.btn')}
           </Button>
         </ThemeProvider>
       </section>
       <section className="second-section">
         <div className="container">
-          <h3>Статистика</h3>
-          <p> Тут буде відображатися актуальна ститастика про коронавірус.</p>
+          <a href="#" className="container-link">
+            <h3>{t('main.statistics')}</h3>
+            <p>{t('main.statisticsP')}</p>
+          </a>
         </div>
         <div className="container">
-          <h3>Симптомы</h3>
-          <p>Тут буде інформація про симптоми коронавірусу.</p>
+          <a href="#" className="container-link">
+            <h3>{t('main.sumptoms')}</h3>
+            <p>{t('main.sumptomsP')}</p>
+          </a>
         </div>
-
         <div className="container">
-          <h3>Профілактика</h3>
-          <p>Тут буду інформація про профілактику коронавірусу.</p>
+          <a href="#" className="container-link">
+            <h3>{t('main.prevention')}</h3>
+            <p>{t('main.preventionP')}</p>
+          </a>
+        </div>
+      </section>
+      <section className="second-section">
+        <div className="container">
+          <a href="#" className="container-link">
+            <h3>{t('main.treatment')}</h3>
+            <p>{t('main.treatmentP')}</p>
+          </a>
+        </div>
+        <div className="container">
+          <a href="#" className="container-link">
+            <h3>{t('main.risk')}</h3>
+            <p>{t('main.riskP')}</p>
+          </a>
+        </div>
+        <div className="container">
+          <a href="#" className="container-link">
+            <h3>{t('main.diagnostics')}</h3>
+            <p>{t('main.diagnosticsP')}</p>
+          </a>
         </div>
       </section>
     </section>
