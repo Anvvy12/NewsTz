@@ -9,10 +9,6 @@ const LoginForm = ({ closeForm }) => {
 
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = lng => {
-    i18n.changeLanguage(lng);
-  };
-
   const onChangeUserName = event => {
     setUsername(event.target.value);
   };
@@ -22,18 +18,18 @@ const LoginForm = ({ closeForm }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    localStorage.setItem('userData', JSON.stringify({ username, password }));
+
     const errors = {};
 
     if (!username.trim()) {
       errors.username = 'Enter Login';
-    } else if (username !== 'admin') {
+    } else if (username !== 'admin' || username.length === 0) {
       errors.username = 'wrong user name';
     }
 
     if (!password.trim()) {
       errors.password = 'Enter password';
-    } else if (password !== '12345') {
+    } else if (password !== '12345' || username.length === 0) {
       errors.password = 'wrong password';
     }
 
@@ -41,6 +37,7 @@ const LoginForm = ({ closeForm }) => {
       setErrors(errors);
       return;
     }
+    localStorage.setItem('userData', JSON.stringify({ username, password }));
 
     closeForm();
     setUsername('');
@@ -65,7 +62,9 @@ const LoginForm = ({ closeForm }) => {
             value={password}
           />
           {errors.password && <div>{errors.password}</div>}
-          <button className="login-btn">{t('login.login')}</button>
+          <button className="login-btn" type="submit">
+            {t('login.login')}
+          </button>
         </form>
       </div>
     </div>

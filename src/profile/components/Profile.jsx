@@ -8,10 +8,7 @@ import './index.scss';
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
-
-  const changeLanguage = lng => {
-    i18n.changeLanguage(lng);
-  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const userDate = JSON.parse(localStorage.getItem('userData')) || {};
 
@@ -32,7 +29,7 @@ const Profile = () => {
       phone: formData.phone,
       email: formData.email,
     };
-
+    setIsSubmitted(true);
     localStorage.setItem('userData', JSON.stringify(newStorage));
   };
 
@@ -102,7 +99,11 @@ const Profile = () => {
             onBlur={handleBlur}
           />
         </div>
-        {errors.phone && <div>{errors.phone}</div>}
+        {errors.phone && (
+          <div className="sub-container">
+            <span className="sub-text">{errors.phone}</span>
+          </div>
+        )}
         <div className="input-container">
           <label htmlFor="email" className="input-label">
             {t('profile.email')}
@@ -116,7 +117,11 @@ const Profile = () => {
             onBlur={handleBlur}
           />
         </div>
-        {errors.email && <div>{errors.email}</div>}
+        {errors.email && (
+          <div className="sub-container">
+            <span className="sub-text">{errors.email}</span>
+          </div>
+        )}
         <div className="submit-container">
           <ThemeProvider theme={theme}>
             <Button
@@ -128,6 +133,11 @@ const Profile = () => {
               {t('profile.save')}
             </Button>
           </ThemeProvider>
+          {isSubmitted && (
+            <div className="sub-container">
+              <span className="sub-text">data save</span>
+            </div>
+          )}
         </div>
       </form>
     </section>
