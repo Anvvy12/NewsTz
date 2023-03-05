@@ -1,6 +1,6 @@
 # Airport
 
-This layout only supports 1440px width
+This layout full flexible
 
 ## Tech stack
 
@@ -10,11 +10,13 @@ This layout only supports 1440px width
 - React-Redux
 - Redux
 - Redux-thunk
+- Materia MUI
 - webpack
 - HTML5
 - CSS3
 - Flexbox
 - Sass (Scss)
+- API
 - BEM
 - Prettierrc
 
@@ -24,8 +26,8 @@ This layout only supports 1440px width
 
 ### Email
 
-- youbody7@gmail.com
+- romanbs.wo@gmail.com
 
 ### Web page
 
-- https://anvvy12.github.io/Airport/
+- https://anvvy12.github.io/NewsTz/
