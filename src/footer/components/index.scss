@@ -17,6 +17,9 @@
 }
 
 .languages-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .languages-btn {

@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 const Main = ({ closeForm }) => {
-  return <main className="main" onClick={closeForm}></main>;
+  return <section className="section" onClick={closeForm}></section>;
 };
 
 export default Main;

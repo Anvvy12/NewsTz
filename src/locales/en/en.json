@@ -13,5 +13,9 @@
   "profile.lastName": "last name",
   "profile.phone": "phone ",
   "profile.email": "email ",
-  "profile.save": "save"
+  "profile.save": "save",
+
+  "login.userName": "username",
+  "login.password": "password",
+  "login.login": "login"
 }

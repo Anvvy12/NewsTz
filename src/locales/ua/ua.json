@@ -13,5 +13,9 @@
   "profile.lastName": "прізвище",
   "profile.phone": "телефон ",
   "profile.email": "email ",
-  "profile.save": "зберегти"
+  "profile.save": "зберегти",
+
+  "login.userName": "ім'я користувача",
+  "login.password": "пароль",
+  "login.login": "ввійти"
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import theme from '../../header/theme';
 import './index.scss';
 
 const Footer = () => {
@@ -32,12 +35,26 @@ const Footer = () => {
         </li>
       </ul>
       <div className="languages-container">
-        <button className="languages-btn" onClick={() => changeLanguage('uk')}>
-          UK
-        </button>
-        <button className="languages-btn" onClick={() => changeLanguage('en')}>
-          EN
-        </button>
+        <ThemeProvider theme={theme}>
+          <Button
+            variant="text"
+            color="primary"
+            className="languages-btn"
+            onClick={() => changeLanguage('en')}
+          >
+            EN
+          </Button>
+        </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Button
+            variant="text"
+            color="primary"
+            className="languages-btn"
+            onClick={() => changeLanguage('uk')}
+          >
+            UK
+          </Button>
+        </ThemeProvider>
       </div>
     </footer>
   );
