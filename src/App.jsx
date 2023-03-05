@@ -27,7 +27,7 @@ const App = () => {
         {loginvisinle ? <LoginForm closeForm={closeForm} /> : null}
         <BrowserRouter>
           <Header setVisible={setVisible} />
-          <main className="main">
+          <main className="main" onClick={closeForm}>
             <Switch>
               <Route exact path="/">
                 <Main closeForm={closeForm} />
