@@ -1,0 +1,11 @@
+{
+  "menu.main": "main",
+  "menu.news": "news",
+  "menu.login": "login",
+
+  "footer.cv": "My CV",
+  "footer.git": "My GitHub",
+  "footer.linkedin": "My LinkedIn",
+
+  "news.show": "show more"
+}

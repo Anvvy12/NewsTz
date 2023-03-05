@@ -6,9 +6,16 @@ import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import { newsArraySelector, pageSelector } from '../news.selectors';
+import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 const News = ({ closeForm, fetchingNews, news, page }) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   useEffect(() => {
     if (news.length === 0) {
       showMore();
@@ -26,7 +33,7 @@ const News = ({ closeForm, fetchingNews, news, page }) => {
       <div className="show-more-container">
         <ThemeProvider theme={theme}>
           <Button variant="contained" className="show-more btn" onClick={showMore}>
-            Show More
+            {t('news.show')}
           </Button>
         </ThemeProvider>
       </div>

@@ -6,57 +6,58 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import theme from '../theme';
+import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 const Header = ({ setVisible }) => {
   const data = JSON.parse(localStorage.getItem('userData'));
 
+  const { t, i18n } = useTranslation();
+
   return (
-    <>
-      <header className="header">
-        <nav className="navigation">
-          <Link to="/" className="nav-link">
-            <div className="nav-container">
+    <header className="header">
+      <nav className="navigation">
+        <Link to="/" className="nav-link">
+          <div className="nav-container">
+            <ThemeProvider theme={theme}>
+              <Button variant="text" className="nav-button">
+                {t('menu.main')}
+              </Button>
+            </ThemeProvider>
+          </div>
+        </Link>
+        <Link to="/news" className="nav-link">
+          <div className="nav-container">
+            <ThemeProvider theme={theme}>
+              <Button variant="text" className="nav-button">
+                {t('menu.news')}
+              </Button>
+            </ThemeProvider>
+          </div>
+        </Link>
+        {data ? (
+          <Link to="/profile" className="profile-btn">
+            <div className=" nav-container">
               <ThemeProvider theme={theme}>
-                <Button variant="text" className="nav-button">
-                  MAIN
-                </Button>
-              </ThemeProvider>
-            </div>
-          </Link>
-          <Link to="/news" className="nav-link">
-            <div className="nav-container">
-              <ThemeProvider theme={theme}>
-                <Button variant="text" className="nav-button">
-                  NEWS
-                </Button>
-              </ThemeProvider>
-            </div>
-          </Link>
-          {data ? (
-            <Link to="/profile" className="profile-btn">
-              <div className=" nav-container">
-                <ThemeProvider theme={theme}>
-                  <Button variant="text" className="nav-button user ">
-                    <FontAwesomeIcon icon={faUser} className="user-icon" />
-                    <span className="name-text">{data.username}</span>
-                  </Button>
-                </ThemeProvider>
-              </div>
-            </Link>
-          ) : (
-            <div className="profile-btn nav-container">
-              <ThemeProvider theme={theme}>
-                <Button variant="text" className="nav-button user " onClick={() => setVisible()}>
+                <Button variant="text" className="nav-button user ">
                   <FontAwesomeIcon icon={faUser} className="user-icon" />
-                  <span className="name-text">Login</span>
+                  <span className="name-text">{data.username}</span>
                 </Button>
               </ThemeProvider>
             </div>
-          )}
-        </nav>
-      </header>
-    </>
+          </Link>
+        ) : (
+          <div className="profile-btn nav-container">
+            <ThemeProvider theme={theme}>
+              <Button variant="text" className="nav-button user " onClick={() => setVisible()}>
+                <FontAwesomeIcon icon={faUser} className="user-icon" />
+                <span className="name-text">{t('menu.login')}</span>
+              </Button>
+            </ThemeProvider>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

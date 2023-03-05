@@ -11,8 +11,8 @@ const Profile = () => {
   const [formData, setFormData] = useState({
     firstName: userDate?.firstName || '',
     lastName: userDate?.lastName || '',
-    email: userDate?.phone || '',
-    phone: userDate?.email || '',
+    email: userDate?.email || '',
+    phone: userDate?.phone || '',
   });
 
   const handleSubmit = event => {

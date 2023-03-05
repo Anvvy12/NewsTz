@@ -1,0 +1,11 @@
+{
+  "menu.main": "головна",
+  "menu.news": "новини",
+  "menu.login": "ввійти",
+
+  "footer.cv": "Моє CV",
+  "footer.git": "Мій GitHub",
+  "footer.linkedin": "Мій LinkedIn",
+
+  "news.show": "показати ще"
+}

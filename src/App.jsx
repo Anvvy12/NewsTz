@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Provider } from 'react-redux';
 import LoginForm from './login-form/components/LoginForm';
 import store from '../store';
@@ -9,6 +9,7 @@ import Profile from './profile/components/Profile';
 import Main from './main/components/Main';
 import News from './news/components/News';
 import { Redirect } from 'react-router-dom';
+import './18';
 import './index.scss';
 
 const App = () => {
@@ -22,28 +23,30 @@ const App = () => {
   };
   return (
     <Provider store={store}>
-      {loginvisinle ? <LoginForm closeForm={closeForm} /> : null}
-      <BrowserRouter>
-        <Header setVisible={setVisible} />
-        <main className="main">
-          <Switch>
-            <Route exact path="/">
-              <Main closeForm={closeForm} />
-            </Route>
-            <Route path="/news">
-              <News closeForm={closeForm} />
-            </Route>
-            {JSON.parse(localStorage.getItem('userData')) ? (
-              <Route path="/profile">
-                <Profile />
+      <Suspense>
+        {loginvisinle ? <LoginForm closeForm={closeForm} /> : null}
+        <BrowserRouter>
+          <Header setVisible={setVisible} />
+          <main className="main">
+            <Switch>
+              <Route exact path="/">
+                <Main closeForm={closeForm} />
               </Route>
-            ) : (
-              <Redirect to="/" />
-            )}
-          </Switch>
-        </main>
-      </BrowserRouter>
-      <Footer />
+              <Route path="/news">
+                <News closeForm={closeForm} />
+              </Route>
+              {JSON.parse(localStorage.getItem('userData')) ? (
+                <Route path="/profile">
+                  <Profile />
+                </Route>
+              ) : (
+                <Redirect to="/" />
+              )}
+            </Switch>
+          </main>
+        </BrowserRouter>
+        <Footer />
+      </Suspense>
     </Provider>
   );
 };

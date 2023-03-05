@@ -1,6 +1,6 @@
 .footer {
   background-color: #353131;
-
+  display: flex;
   padding: 20px 0 20px 0;
 }
 
@@ -8,10 +8,16 @@
   margin-left: 2vw;
 
   &__item {
-    padding: 0 8px 0 8px;
+    font-size: 16px;
   }
 }
 
 .footer-text {
   color: #fff;
+}
+
+.languages-container {
+}
+
+.languages-btn {
 }
